@@ -1,0 +1,41 @@
+<script>
+	$(document).ready(function() {
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		
+
+		$('#calendar').fullCalendar({
+			theme: true,
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay,listDay'
+			},
+			buttonText: {
+				list: 'Lista'
+			},
+			firstDay: 1,
+			defaultDate: date,
+			navLinks: true, // can click day/week names to navigate views
+			editable: false,
+			eventLimit: true, // allow "more" link when too many events
+			allDaySlot: false,
+			timeFormat: 'HH:mm',
+			slotLabelFormat: 'HH:mm',
+			minTime: "06:00:00",
+			maxTime: "20:00:00",
+			eventClick: function(calEvent, jsEvent, view) {
+				deleta_evento(calEvent.id);
+			},
+			navLinkDayClick: function(date, jsEvent) {
+				consulta_modal(date);
+			},
+			eventRender: function(event, element) {
+				element.css("cursor","pointer");
+			}
+		});
+	});
+
+</script>
