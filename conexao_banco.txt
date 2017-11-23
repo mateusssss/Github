@@ -1,0 +1,4 @@
+nome banco: u831834061_smfut
+nome usuario: u831834061_admin
+senha: jpaGDTITrv3C
+host: mysql.hostinger.com.br
